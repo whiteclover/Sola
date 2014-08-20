@@ -12,8 +12,8 @@ setup(
     keywords = "Framework",
     url='https://github.com/thomashuang/Leaf',
     long_description=open('README.rst').read(),
-    packages = ['sola'],
-    install_requires = ['MySQLdb', 'setuptools'],
+    packages = ['sola', 'sola.web'],
+    install_requires = ['setuptools'],
     classifiers=(
         "Development Status :: Production/Alpha",
         "License :: GPL",

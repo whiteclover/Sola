@@ -6,12 +6,29 @@ from gevent.wsgi import WSGIServer
 
 class WebServer(object):
 
-    def __init__(self, host='127.0.0.1', port=8080, encoding='utf-8'):
+    def __init__(self, server_name='Sola', host='127.0.0.1', port=8080, encoding='utf-8'):
         self.httpd = None
         self.ready = False
         self.host = host
         self.port = port
         self.encoding = encoding
+
+    def bootstrap(self):
+        self.bootstrap_options()
+        self.boostrap_command_parse()
+        self.boostrap_database_configuration()
+        
+
+    def bootstrap_options(self):
+        pass
+
+
+    def boostrap_database_configuration(self):
+        pass
+
+    def boostrap_command_parse(self):
+        pass
+
 
     def new_route(self):
         return cherrypy.dispatch.RoutesDispatcher()
