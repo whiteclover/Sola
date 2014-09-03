@@ -64,9 +64,12 @@ class WebServer(object):
     def serve_forever(self):
         self.ready = True
         self._start_app()
-        cherrypy.engine.start()
-        self.httpd.serve_forever()
-
+        try:
+            cherrypy.engine.start()
+            self.httpd.serve_forever()
+        except KeyboardInterrupt:
+            self.stop()
     def stop(self):
         cherrypy.engine.stop()
         self.httpd.stop()
+        self.ready = False
